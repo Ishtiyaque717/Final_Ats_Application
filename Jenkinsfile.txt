@@ -1,0 +1,45 @@
+pipeline {
+  agent any  
+    stages {
+        stage('Maven command clean') { 
+            steps {
+                sh 'mvn clean'
+            }
+        }
+        stage('maven command compile') { 
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage('Maven command test-compile') { 
+            steps {
+                sh 'mvn test-compile'
+            }
+        }
+        stage('Maven command test') { 
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Maven command install') { 
+            steps {
+                sh 'mvn install'
+            }
+        }
+        stage('Maven command site') { 
+            steps {
+                sh 'echo "mvn site command is not working"'
+            }
+        }
+        stage('validate') { 
+            steps {
+                sh 'echo "mvn validate comman is not working "'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo "I am not deploying anything"
+            }
+        }
+    }
+}
